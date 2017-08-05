@@ -3,13 +3,14 @@
  */
 var board=new Array();
 var score= 0,flag=0;
-// var showing= ['子曰','三思','后行','1……','2……','3……','我','喜欢','♥','♥♥','晓丹'];
+
 var showing= ['2','4','8','16','32','64','128','256','512','1024','2048','4096'];
 var startX= 0,
     startY= 0,
     endX= 0,
     endY=0;
 window.onload=function(){
+    prepareForMobile();
     $('#box1').removeClass('dn');
     $('#box1').addClass('message-container');
     $('#box2').addClass('message');
@@ -19,9 +20,9 @@ window.onload=function(){
     },3000);
     newgame();
 }
-$(document).ready(function () {
-    prepareForMobile();
-    });
+/*$(document).ready(function () {
+    
+    });*/
 function prepareForMobile() {
     if(documentWidth>500){
         //整个大方框
