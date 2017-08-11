@@ -1,8 +1,8 @@
 /**
  * Created by 51611 on 17/5/6.
  */
-documentWidth=window.screen.availWidth;
-//documentWidth=document.body.clientWidth;
+// documentWidth=window.screen.availWidth;
+documentWidth=document.documentElement.clientWidth;
 gridContainerWidth=0.92*documentWidth;
 cellSlideLength=0.18*documentWidth;
 cellSpace=0.04*documentWidth;

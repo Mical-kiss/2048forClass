@@ -14,7 +14,7 @@ function showNumberWithAnimation(i,j,randNumber){
         height:cellSlideLength,
         top:getPosTop(i,j),
         left:getPosLeft(i,j)
-    },200)
+    },300)
 }
 function showMoveAnimation(fromx,fromy,tox,toy){
     var numberCell=$('#number-cell-'+fromx+'-'+fromy);
@@ -25,8 +25,5 @@ function showMoveAnimation(fromx,fromy,tox,toy){
 }
 
 function updateScore(score){
-    //$('#score').fadeOut(100);
     $('#score').text(score);
-    //$('#score').fadeIn(200);
-    //console.log(score);
 }

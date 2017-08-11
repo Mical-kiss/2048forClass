@@ -11,20 +11,19 @@ var startX= 0,
     endX= 0,
     endY=0;
 window.onload=function(){
-    prepareForMobile();
+    
     $('#box1').removeClass('dn');
     $('#box1').addClass('message-container');
     $('#box2').addClass('message');
     setTimeout(function(){
         $('#box1').addClass('dn');
         $('#before').addClass('dn');
-    },3000);
+    },4000);
+    prepareForMobile();
     newgame();
 }
-/*$(document).ready(function () {
-    
-    });*/
 function prepareForMobile() {
+    // 判断设备窗口大小
     if(documentWidth>500){
         //整个大方框
         gridContainerWidth=500;

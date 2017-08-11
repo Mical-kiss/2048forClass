@@ -43,7 +43,6 @@ html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img {
     }
     60%{
         opacity: 0.9;
-        /*display: none!important;*/
     }
     100%{
         opacity: 0.4;
@@ -53,7 +52,7 @@ html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img {
 .message{
     width: 100%;
     line-height: 100%;
-    margin:60% auto;
+    margin:30% auto;
     text-align: center;
     z-index: 999;
     /*animation: fontMove 2s linear forwards;*/
