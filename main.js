@@ -4,8 +4,8 @@
 var board=new Array();
 var score= 0,flag=0;
 
-var showing= ['2','4','8','16','32','64','128','256','512','1024','2048','4096'];
-// var showing= ['2','4','8','16','32','64','128','256','512','1024','2048','4096'];
+var showing= ['2','4','8','16','32','64','128','256','512','1024','2048','4096','8192'];
+// var showing= ['子曰','三思','后行','1……','2……','3……','我','喜欢','某','某','某','4096'];
 var startX= 0,
     startY= 0,
     endX= 0,
@@ -63,11 +63,13 @@ function init(){
     updateBoardView();
 }
 function updateBoardView(){
+    /*先移除所有放数字的盒子*/
     $('.number-cell').remove();
     for(i=0;i<4;i++){
         for(j=0;j<4;j++){
             $('#grid-container').append('<div class="number-cell" id="number-cell-'+i+'-'+j+'"></div>');
             var theNumberCell=$('#number-cell-'+i+'-'+j);
+            /*如果该位置的数字为0*/
             if(board[i][j]==0){
                 theNumberCell.css('width','0px');
                 theNumberCell.css('height','0px');
@@ -87,7 +89,7 @@ function updateBoardView(){
         }
     }
     $('.number-cell').css('line-height',cellSlideLength+'px');
-    $('.number-cell').css('line-size',0.6*cellSlideLength+'px');
+    // $('.number-cell').css('line-size',0.6*cellSlideLength+'px');
 }
 function generateOneNumber(){
     if(nospace(board))
@@ -112,8 +114,8 @@ function generateOneNumber(){
             }
     }
     //随机一个数字
-    //var randNumber=Math.random()<0.5?2:4;
-    var randNumber=2;
+    var randNumber=Math.random()<0.5?2:4;
+    // var randNumber=2;
     //在随机位置显示随机数
     showNumberWithAnimation(randx,randy,randNumber);
     return true;
@@ -226,9 +228,10 @@ function moveLeft() {
 
     for (i = 0; i < 4; i++) {
         for (j = 1; j < 4; j++) {
+            /*从第一行第二个开始遍历*/
             if (board[i][j] != 0) {
                 for (k = 0; k < j; k++) {
-                    if (board[i][k] == 0 && noBlockHorizontalX(i, k, j, board)) {
+                    if (board[i][k] == 0 ) {
                         //$('#audio2').removeAttr('muted','');
                         showMoveAnimation(i, j, i, k);
                         board[i][k] = board[i][j];

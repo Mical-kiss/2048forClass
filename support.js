@@ -51,6 +51,7 @@ function canMoveLeft( board){
     for(i=0;i<4;i++)
         for(j=1;j<4;j++)
             if(board[i][j]!=0)
+                /*从第一行第二个不为0的数字开始判断，如果左侧的数字格子是0 或者和它本身相等*/
                 if(board[i][j-1]==0||board[i][j-1]==board[i][j])
                 return true;
     return false;
@@ -82,6 +83,7 @@ function canMoveDown(board){
         }
     return false;
 }
+/*判断两个相等元素之间是否存在不为0的元素*/
 function noBlockHorizontalX(rowX,col1,col2,board){
     for(m=col1+1;m<col2;m++){
         if(board[rowX][m]!=0)
